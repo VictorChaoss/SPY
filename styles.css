@@ -581,6 +581,24 @@ body {
   box-shadow: 0 0 14px rgba(0, 240, 255, 0.6);
 }
 
+.intro-pump-link {
+  text-decoration: none;
+  background: linear-gradient(90deg, var(--cyan-bright), #38a1ff);
+  color: #01040a;
+  font-family: var(--font-display);
+  font-size: 0.68rem;
+  font-weight: 900;
+  letter-spacing: 0.12em;
+  padding: 6px 11px;
+  white-space: nowrap;
+  transition: all 0.2s ease;
+}
+
+.intro-pump-link:hover {
+  box-shadow: 0 0 16px rgba(0, 240, 255, 0.8);
+  transform: translateY(-1px);
+}
+
 .enter-subtext {
   font-family: var(--font-mono);
   font-size: 0.74rem;
