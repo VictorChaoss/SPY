@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SPY — STACK PAPER YOLO | Paired with $SPY</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=Rajdhani:wght@400;600;700&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- =========================================================
+       INTRO GATE SCREEN (FULL VIEWPORT)
+       ========================================================= -->
+  <section id="intro-screen" class="intro-screen" aria-label="SPY Introduction">
+    <canvas id="cyber-canvas" class="cyber-canvas"></canvas>
+
+    <!-- Atmospheric Overlays -->
+    <div class="cyber-grid-floor"></div>
+    <div class="radial-vignette"></div>
+    <div class="scanlines"></div>
+
+    <!-- Futuristic HUD Frame Corners -->
+    <header class="hud-top">
+      <div class="hud-corner hud-top-left">
+        <span class="hud-dot"></span>
+        <span class="hud-mono">SYS.PROTOCOL // <strong>$SPY</strong></span>
+      </div>
+      <div class="hud-center-status">
+        <span class="hud-bracket">[</span>
+        <span class="hud-mono" id="hud-status-text">QUANTUM ORBITAL CORE : ACTIVE</span>
+        <span class="hud-bracket">]</span>
+      </div>
+      <div class="hud-corner hud-top-right">
+        <span class="hud-mono" id="hud-telemetry">00:00:00 // SYNC 100%</span>
+      </div>
+    </header>
+
+    <!-- Main Centerpiece: 3D Spinning Logo + Enter Button -->
+    <div class="intro-centerpiece">
+      <div class="logo-stage" id="logo-stage" title="Hover to interact">
+        <div class="plasma-core"></div>
+        <div class="holo-ring ring-outer"></div>
+        <div class="holo-ring ring-middle"></div>
+        <div class="holo-ring ring-inner"></div>
+
+        <div class="logo-spinner" id="logo-spinner">
+          <div class="logo-face logo-front">
+            <img
+              src="LOGO Background Removed.png"
+              alt="SPY - Stack Paper Yolo Logo"
+              class="spy-logo-img"
+              draggable="false"
+            />
+          </div>
+          <div class="logo-face logo-back">
+            <img
+              src="LOGO Background Removed.png"
+              alt="SPY - Stack Paper Yolo Logo"
+              class="spy-logo-img"
+              draggable="false"
+            />
+          </div>
+        </div>
+      </div>
+
+      <div class="enter-cta-wrapper">
+        <div class="tagline-pill">
+          <span class="tagline-line"></span>
+          <span class="tagline-text">STACK PAPER YOLO</span>
+          <span class="tagline-line"></span>
+        </div>
+
+        <button id="enter-btn" class="enter-btn" type="button">
+          <span class="btn-corner tl"></span>
+          <span class="btn-corner tr"></span>
+          <span class="btn-corner bl"></span>
+          <span class="btn-corner br"></span>
+          <span class="btn-content">
+            <span class="btn-label">ENTER</span>
+            <svg class="btn-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <path d="M5 12h14M13 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </span>
+        </button>
+
+        <!-- Intro Screen CA Placeholder Bar -->
+        <div class="intro-ca-box">
+          <span class="intro-ca-badge">CA</span>
+          <code id="intro-ca-value" class="intro-ca-code">TBA — XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXpump</code>
+          <button id="intro-copy-ca-btn" class="intro-copy-btn" type="button">
+            <span id="intro-copy-ca-text">COPY</span>
+          </button>
+        </div>
+
+        <p class="enter-subtext" id="enter-subtext">
+          PAIRED WITH <strong>$SPY</strong> // CREATOR FEES PAID AS <strong>$SPY DIVIDENDS</strong>
+        </p>
+      </div>
+    </div>
+
+    <!-- Bottom HUD Bar -->
+    <footer class="hud-bottom">
+      <div class="hud-corner hud-bottom-left">
+        <span class="hud-mono">LAUNCH // PUMP.FUN × $SPY</span>
+      </div>
+      <div class="spin-controls">
+        <button type="button" class="hud-chip active" data-spin="3d" title="3D Coin Spin">3D SPIN</button>
+        <button type="button" class="hud-chip" data-spin="orbit" title="3D Gyro Orbit">GYRO ORBIT</button>
+        <button type="button" class="hud-chip" data-spin="pulse" title="Hover Lock">LOCK VIEW</button>
+      </div>
+      <div class="hud-corner hud-bottom-right">
+        <span class="hud-mono">REWARDS // $SPY DIVIDENDS</span>
+      </div>
+    </footer>
+  </section>
+
+  <!-- =========================================================
+       MAIN SITE STAGE (REVEALED AFTER ENTER)
+       ========================================================= -->
+  <main id="main-site" class="main-site hidden" aria-hidden="true">
+    <!-- Ambient Cyber Background for Main Site -->
+    <div class="site-bg-glow"></div>
+    <div class="site-grid-overlay"></div>
+
+    <!-- Live Ticker Tape -->
+    <div class="ticker-bar">
+      <div class="ticker-track">
+        <span>⚡ <strong>$SPY (STACK PAPER YOLO)</strong></span>
+        <span>•</span>
+        <span>LAUNCHING ON <strong>PUMP.FUN</strong></span>
+        <span>•</span>
+        <span>PAIRED WITH <strong>$SPY</strong></span>
+        <span>•</span>
+        <span>CREATOR FEES PAID OUT AS <strong>$SPY DIVIDEND STOCKS</strong></span>
+        <span>•</span>
+        <span>EVERY HOLDER RECEIVES <strong>$SPY AS REWARDS</strong></span>
+        <span>•</span>
+        <span>⚡ <strong>$SPY (STACK PAPER YOLO)</strong></span>
+        <span>•</span>
+        <span>LAUNCHING ON <strong>PUMP.FUN</strong></span>
+        <span>•</span>
+        <span>PAIRED WITH <strong>$SPY</strong></span>
+        <span>•</span>
+        <span>CREATOR FEES PAID OUT AS <strong>$SPY DIVIDEND STOCKS</strong></span>
+        <span>•</span>
+        <span>EVERY HOLDER RECEIVES <strong>$SPY AS REWARDS</strong></span>
+      </div>
+    </div>
+
+    <!-- Navigation Bar -->
+    <nav class="site-nav">
+      <div class="nav-brand">
+        <img src="LOGO Background Removed.png" alt="SPY" class="nav-logo" />
+        <div class="nav-brand-text">
+          <span class="nav-title">$SPY</span>
+          <small class="nav-subtitle">STACK PAPER YOLO</small>
+        </div>
+      </div>
+
+      <div class="nav-links">
+        <a href="#about">OVERVIEW</a>
+        <a href="#dividends">$SPY DIVIDENDS</a>
+        <a href="#flywheel">HOW IT WORKS</a>
+        <a href="#contract">CONTRACT (CA)</a>
+      </div>
+
+      <div class="nav-actions">
+        <a href="https://pump.fun" target="_blank" rel="noopener noreferrer" class="nav-pump-btn">
+          <span class="pulse-indicator"></span>
+          PUMP.FUN
+        </a>
+        <button id="replay-intro-btn" class="replay-btn" type="button" title="Replay Intro Animation">
+          ⟲ INTRO
+        </button>
+      </div>
+    </nav>
+
+    <!-- Scrollable Content Container -->
+    <div class="site-scroll-container">
+      <!-- HERO & DESCRIPTION SECTION -->
+      <section id="about" class="hero-section">
+        <div class="hero-grid">
+          <!-- Left Column: Headlines, Description & CA Box -->
+          <div class="hero-copy">
+            <div class="protocol-pill">
+              <span class="pill-dot"></span>
+              <span>PUMP.FUN LAUNCH // PAIRED WITH $SPY</span>
+            </div>
+
+            <h1 class="hero-title">
+              STACK PAPER YOLO
+              <span class="hero-title-accent">EARN REAL <span class="text-gradient">$SPY</span> DIVIDENDS</span>
+            </h1>
+
+            <p class="hero-description">
+              <strong>$SPY (Stack Paper Yolo)</strong> bridges high-velocity Solana meme culture on
+              <span class="highlight-cyan">Pump.fun</span> with the undisputed titan of traditional markets.
+              Directly <strong>paired with $SPY</strong>, all <strong>Pump.fun creator fees</strong> are
+              systematically routed back to the community and paid out as <strong>$SPY dividend stocks</strong>
+              — meaning <strong>every holder receives $SPY as rewards</strong> simply for holding.
+            </p>
+
+            <!-- Quick Value Badges -->
+            <div class="hero-badges">
+              <div class="cyber-badge">
+                <span class="badge-label">PLATFORM</span>
+                <span class="badge-value">PUMP.FUN</span>
+              </div>
+              <div class="cyber-badge">
+                <span class="badge-label">LIQUIDITY PAIR</span>
+                <span class="badge-value">PAIRED W/ $SPY</span>
+              </div>
+              <div class="cyber-badge">
+                <span class="badge-label">CREATOR FEES</span>
+                <span class="badge-value">100% → $SPY DIVIDENDS</span>
+              </div>
+              <div class="cyber-badge">
+                <span class="badge-label">HOLDER YIELD</span>
+                <span class="badge-value">AUTO $SPY REWARDS</span>
+              </div>
+            </div>
+
+            <!-- CONTRACT ADDRESS (CA) PLACEHOLDER TERMINAL -->
+            <div id="contract" class="ca-terminal">
+              <div class="ca-header">
+                <span class="ca-title">
+                  <span class="ca-led"></span>
+                  OFFICIAL CONTRACT ADDRESS (CA) // PUMP.FUN
+                </span>
+                <span class="ca-status-tag">PLACEHOLDER // READY FOR DEPLOY</span>
+              </div>
+
+              <div class="ca-body">
+                <code id="ca-value" class="ca-code" data-ca="TBA_PUMP_FUN_CONTRACT_ADDRESS_COMING_SOON">
+                  TBA —XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXpump
+                </code>
+                <button id="copy-ca-btn" class="copy-ca-btn" type="button">
+                  <span id="copy-ca-text">COPY CA</span>
+                </button>
+              </div>
+
+              <div class="ca-footer-links">
+                <a href="https://pump.fun" target="_blank" rel="noopener noreferrer" class="ca-action-link primary">
+                  BUY ON PUMP.FUN ↗
+                </a>
+                <a href="#dividends" class="ca-action-link">
+                  VIEW DIVIDEND MECHANICS →
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right Column: Interactive Spinning Emblem & Live Dividend HUD Card -->
+          <div class="hero-visual">
+            <div class="hero-holo-card">
+              <div class="holo-card-header">
+                <span>ORBITAL DIVIDEND ENGINE</span>
+                <span class="live-tag">● ACTIVE</span>
+              </div>
+
+              <div class="hero-logo-wrapper">
+                <div class="hero-logo-glow"></div>
+                <div class="hero-ring-1"></div>
+                <div class="hero-ring-2"></div>
+                <img
+                  src="LOGO Background Removed.png"
+                  alt="SPY Coin Emblem"
+                  class="hero-spinning-logo"
+                />
+              </div>
+
+              <div class="holo-card-stats">
+                <div class="stat-row">
+                  <span class="stat-key">TOKEN TICKER</span>
+                  <span class="stat-val cyan">$SPY</span>
+                </div>
+                <div class="stat-row">
+                  <span class="stat-key">PAIRING ASSET</span>
+                  <span class="stat-val">$SPY (S&amp;P 500)</span>
+                </div>
+                <div class="stat-row">
+                  <span class="stat-key">FEE DISTRIBUTION</span>
+                  <span class="stat-val green">PAID IN $SPY DIVIDEND STOCKS</span>
+                </div>
+                <div class="stat-row">
+                  <span class="stat-key">REWARD ELIGIBILITY</span>
+                  <span class="stat-val">EVERY $SPY HOLDER</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- THE $SPY DIVIDEND ENGINE SECTION -->
+      <section id="dividends" class="dividend-section">
+        <div class="section-header">
+          <span class="section-eyebrow">SYS.ARCHITECTURE // REWARD PROTOCOL</span>
+          <h2 class="section-title">PUMP.FUN CREATOR FEES → <span class="text-gradient">$SPY DIVIDENDS</span></h2>
+          <p class="section-subtitle">
+            Instead of creator fees being extracted, <strong>Stack Paper Yolo ($SPY)</strong> turns every Pump.fun trade into real index-backed dividend power for holders.
+          </p>
+        </div>
+
+        <div id="flywheel" class="flywheel-grid">
+          <!-- Step 1 -->
+          <article class="flywheel-card">
+            <div class="card-step-num">01 // LAUNCH &amp; VOLUME</div>
+            <h3>Pump.fun Trading Engine</h3>
+            <p>
+              <strong>$SPY</strong> launches natively on <strong>Pump.fun</strong>. Every buy and sell transaction generates continuous creator fees directly from market volume.
+            </p>
+            <div class="card-bottom-tag">SOURCE: PUMP.FUN CREATOR FEES</div>
+          </article>
+
+          <!-- Step 2 -->
+          <article class="flywheel-card featured">
+            <div class="card-step-num">02 // PAIRED WITH $SPY</div>
+            <h3>Direct $SPY Pairing</h3>
+            <p>
+              The token ecosystem is paired directly with <strong>$SPY</strong>, anchoring high-upside crypto momentum to the benchmark S&amp;P 500 dividend asset.
+            </p>
+            <div class="card-bottom-tag">MECHANISM: $SPY LIQUIDITY &amp; BACKING</div>
+          </article>
+
+          <!-- Step 3 -->
+          <article class="flywheel-card">
+            <div class="card-step-num">03 // HOLDER PAYOUTS</div>
+            <h3>$SPY Dividend Stock Rewards</h3>
+            <p>
+              Creator fees are paid out as <strong>$SPY dividend stocks</strong>. Every single holder receives <strong>$SPY as rewards</strong> proportional to their holdings.
+            </p>
+            <div class="card-bottom-tag">DESTINATION: EVERY $SPY HOLDER</div>
+          </article>
+        </div>
+
+        <!-- Highlight Callout Banner -->
+        <div class="dividend-banner">
+          <div class="banner-icon">◈</div>
+          <div class="banner-content">
+            <h3>THE STACK PAPER YOLO THESIS</h3>
+            <p>
+              Hold the coin. Capture the volume. Receive <strong>$SPY</strong>. By converting Pump.fun creator fees into <strong>$SPY dividend stock payouts</strong>, every holder stacks real blue-chip rewards while riding the wave.
+            </p>
+          </div>
+          <a href="#contract" class="banner-cta">GET CONTRACT (CA)</a>
+        </div>
+      </section>
+
+      <!-- Site Footer -->
+      <footer class="site-footer">
+        <div class="footer-inner">
+          <div class="footer-brand">
+            <img src="LOGO Background Removed.png" alt="SPY" class="footer-logo" />
+            <span><strong>$SPY</strong> — STACK PAPER YOLO</span>
+          </div>
+          <div class="footer-meta">
+            PAIRED WITH $SPY // PUMP.FUN CREATOR FEES PAID AS $SPY DIVIDEND REWARDS
+          </div>
+        </div>
+      </footer>
+    </div>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
